@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [dark, setDark] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   const { scrollY, scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress);
@@ -19,14 +20,29 @@ export default function Home() {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() || 0;
-    if (latest > previous && latest > 80) setHidden(true);
-    else setHidden(false);
-  });
+  useEffect(() => {
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  return () => observer.disconnect();
+}, []);
+
 
   return (
     <main className="bg-white text-black dark:bg-black dark:text-white transition">
+
 
       {/* SCROLL BAR */}
       <motion.div
@@ -52,9 +68,38 @@ export default function Home() {
           <h1 className="font-semibold">Greg.dev</h1>
 
           <div className="flex gap-6 items-center text-sm">
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a
+  href="#services"
+  className={`transition ${
+    activeSection === "services"
+      ? "text-black dark:text-white font-semibold"
+      : "text-gray-500 hover:text-black dark:hover:text-white"
+  }`}
+>
+  Services
+</a>
+
+<a
+  href="#projects"
+  className={`transition ${
+    activeSection === "projects"
+      ? "text-black dark:text-white font-semibold"
+      : "text-gray-500 hover:text-black dark:hover:text-white"
+  }`}
+>
+  Projects
+</a>
+
+<a
+  href="#contact"
+  className={`transition ${
+    activeSection === "contact"
+      ? "text-black dark:text-white font-semibold"
+      : "text-gray-500 hover:text-black dark:hover:text-white"
+  }`}
+>
+  Contact
+</a>
 
             <button
               onClick={() => setDark(!dark)}
@@ -67,14 +112,20 @@ export default function Home() {
       </motion.nav>
 
       {/* HERO */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
+      <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-5xl md:text-6xl font-bold max-w-4xl tracking-tight"
         >
-          I Build Systems Fast Using{" "}
-          <span className="text-gray-500">Vibe Coding</span>
+          I Build Automated Systems That{" "}
+<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+  Replace Manual Work
+</span>{" "}
+&{" "}
+<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+  Increase Conversions
+</span>
         </motion.h1>
 
         <motion.p
@@ -83,7 +134,7 @@ export default function Home() {
           transition={{ delay: 0.2 }}
           className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-xl"
         >
-          I create automation workflows, tools, and funnels in days—not weeks.
+          I use vibe coding, n8n and automation tools to build systems that save hours of work and help businesses scale faster.
         </motion.p>
 
         {/* CTA BUTTONS (RESTORED) */}
@@ -93,12 +144,17 @@ export default function Home() {
           transition={{ delay: 0.4 }}
           className="mt-8 flex gap-4"
         >
-          <a
-            href="#contact"
-            className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-xl hover:scale-105 transition"
-          >
-            Book a Call
-          </a>
+          <motion.a
+  href="#contact"
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.96 }}
+  className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-xl transition relative overflow-hidden"
+>
+  <span className="relative z-10">Book a Call</span>
+
+  {/* glow layer */}
+  <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition" />
+</motion.a>
 
           <a
             href="#projects"
@@ -146,46 +202,108 @@ export default function Home() {
       </motion.section>
 
       {/* PROJECTS */}
-      <section id="projects" className="px-6 py-20">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-center">Projects</h2>
+<section id="projects" className="snap-start min-h-screen px-6 py-20 flex items-center">
+  <div className="max-w-5xl mx-auto w-full">
 
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
+    <div className="text-center">
+      <p className="text-sm uppercase tracking-widest text-gray-400">
+        Projects
+      </p>
+      <h2 className="text-3xl font-semibold mt-2">
+        Systems I’ve Built
+      </h2>
+    </div>
 
-            <motion.div
-              className="p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold">Automation System</h3>
-              <p className="mt-3 text-gray-600 dark:text-gray-300">
-                Built workflow automation connecting tools.
-              </p>
-            </motion.div>
+    {/* GRID */}
+    <div className="grid md:grid-cols-2 gap-8 mt-12">
 
-            <motion.div
-              className="p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold">Lead Funnel</h3>
-              <p className="mt-3 text-gray-600 dark:text-gray-300">
-                Built automated funnel system.
-              </p>
-            </motion.div>
+      {[
+        {
+  title: "Content Automation System",
+  desc: "Built an automated content pipeline connecting ClickUp, Slack, and publishing tools.",
+  result: "Reduced manual work by 80% and sped up content production",
+},
+{
+  title: "Lead Funnel System",
+  desc: "Created a fully automated funnel with CRM follow-ups and lead tracking.",
+  result: "Increased conversion rate and eliminated manual follow-ups",
+},
+      ].map((project, i) => (
 
-          </div>
-        </div>
-      </section>
+        <motion.div
+          key={i}
+          className="group p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5 transition shadow-sm hover:shadow-2xl relative overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -10, scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          viewport={{ once: true }}
+        >
+
+          {/* GLOW EFFECT */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-transparent via-white/10 to-transparent dark:via-white/5" />
+
+          <h3 className="text-xl font-semibold relative z-10">
+            {project.title}
+          </h3>
+
+          <p className="mt-3 text-gray-600 dark:text-gray-300 relative z-10">
+            {project.desc}
+          </p>
+
+          <p className="mt-4 text-sm text-gray-500 relative z-10">
+            {project.result}
+          </p>
+
+        </motion.div>
+
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+
+{/* WHY ME */}
+<section className="px-6 py-20 text-center">
+  <div className="max-w-4xl mx-auto">
+
+    <h2 className="text-3xl font-semibold">
+      Why Work With Me
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8 mt-12">
+
+      <div>
+        <h3 className="font-semibold">Fast Execution</h3>
+        <p className="mt-2 text-gray-500">
+          I build working systems in days, not weeks.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold">Automation First</h3>
+        <p className="mt-2 text-gray-500">
+          Everything is designed to reduce manual work and scale operations.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold">Results Focused</h3>
+        <p className="mt-2 text-gray-500">
+          I focus on outcomes—time saved, conversions improved, systems that work.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section id="contact" className="px-6 py-20 text-center">
         <h2 className="text-3xl font-semibold">
-          Let’s Build Something Fast
+          Let’s Build a System That Saves You Time and Drives Results
         </h2>
 
         <p className="mt-4 text-gray-600 dark:text-gray-300">
@@ -196,7 +314,7 @@ export default function Home() {
           href="mailto:your@email.com"
           className="inline-block mt-8 px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-xl hover:scale-105 transition"
         >
-          Book a Call
+          Book a Free Strategy Call
         </a>
       </section>
 
