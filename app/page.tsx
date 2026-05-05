@@ -205,6 +205,98 @@ export default function Home() {
         </motion.div>
       </section>
 
+  {/* TRUST / PROOF */}
+<section className="px-6 py-16 text-center">
+  <div className="max-w-5xl mx-auto">
+
+    <p className="text-sm uppercase tracking-widest text-gray-400">
+      Proof & Experience
+    </p>
+
+    <h2 className="text-3xl font-semibold mt-2">
+      Systems I’ve Already Built
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8 mt-12">
+
+      {/* Tattoo Website */}
+      <motion.div
+        className="p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
+        whileHover={{ y: -6 }}
+      >
+        <h3 className="font-semibold">Tattoo Business Website</h3>
+
+        <p className="mt-3 text-gray-500">
+          Built and launched a live website for a local tattoo business.
+        </p>
+
+      <a href="https://northinkcdo.com" target="_blank" className="underline">
+  View Live Site
+</a>
+        <p className="mt-4 text-sm text-gray-400">
+          Result: Online presence + client inquiries
+        </p>
+      </motion.div>
+
+      {/* KPI Dashboard */}
+      <motion.div
+        className="p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
+        whileHover={{ y: -6 }}
+      >
+        <h3 className="font-semibold">KPI Dashboard</h3>
+
+<p className="mt-3 text-gray-500">
+  Contributed to building a KPI dashboard as part of a task to track performance and business metrics.
+</p>
+
+<p className="mt-4 text-sm text-gray-400">
+  Result: Improved visibility and better decision-making
+</p>
+      </motion.div>
+
+      {/* Automation Task */}
+      <motion.div
+        className="p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
+        whileHover={{ y: -6 }}
+      >
+        <h3 className="font-semibold">Automation Workflow</h3>
+
+        <p className="mt-3 text-gray-500">
+          Created a working automation system using vibe coding tools.
+        </p>
+
+        <p className="mt-4 text-sm text-gray-400">
+          Result: Reduced manual work and improved efficiency
+        </p>
+      </motion.div>
+
+    </div>
+
+    {/* PERSONAL PROJECTS */}
+<div className="mt-12 text-sm text-gray-500">
+  <p>Personal Builds:</p>
+
+  <div className="mt-4 flex justify-center gap-6">
+    <a
+      href="https://mcgreg-linkhub.vercel.app/"
+      target="_blank"
+      className="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      View Link Hub
+    </a>
+
+    <a
+      href="https://finance-tracker-ver-1.vercel.app/"
+      target="_blank"
+      className="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+    >
+      View FlowTrack
+    </a>
+  </div>
+</div>
+  </div>   {/* CLOSE max-w container */}
+</section>  {/* CLOSE TRUST SECTION */}
+
       {/* SERVICES (RESTORED) */}
       <motion.section
         id="services"
