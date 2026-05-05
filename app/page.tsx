@@ -333,63 +333,94 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* PROJECTS */}
-<section id="projects" className="snap-start min-h-screen px-6 py-20 flex items-center">
-  <div className="max-w-5xl mx-auto w-full">
+    {/* CASE STUDIES */}
+<section id="projects" className="px-6 py-20">
+  <div className="max-w-5xl mx-auto">
 
     <div className="text-center">
       <p className="text-sm uppercase tracking-widest text-gray-400">
-        Projects
+        Case Studies
       </p>
       <h2 className="text-3xl font-semibold mt-2">
-        Systems I’ve Built
+        Real Systems, Real Results
       </h2>
     </div>
 
-    {/* GRID */}
-    <div className="grid md:grid-cols-2 gap-8 mt-12">
+    <div className="mt-16 space-y-12">
 
-      {[
-        {
-  title: "Content Automation System",
-  desc: "Built an automated content pipeline connecting ClickUp, Slack, and publishing tools.",
-  result: "Reduced manual work by 80% and sped up content production",
-},
-{
-  title: "Lead Funnel System",
-  desc: "Created a fully automated funnel with CRM follow-ups and lead tracking.",
-  result: "Increased conversion rate and eliminated manual follow-ups",
-},
-      ].map((project, i) => (
+      {/* CASE 1 */}
+      <motion.div
+        className="p-8 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="text-xl font-semibold">
+          Content Automation System
+        </h3>
 
-        <motion.div
-          key={i}
-          className="group p-6 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5 transition shadow-sm hover:shadow-2xl relative overflow-hidden"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -10, scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          viewport={{ once: true }}
-        >
+        <div className="mt-6 space-y-4 text-gray-600 dark:text-gray-300">
 
-          {/* GLOW EFFECT */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-transparent via-white/10 to-transparent dark:via-white/5" />
-
-          <h3 className="text-xl font-semibold relative z-10">
-            {project.title}
-          </h3>
-
-          <p className="mt-3 text-gray-600 dark:text-gray-300 relative z-10">
-            {project.desc}
+          <p>
+            <span className="font-semibold text-black dark:text-white">
+              Problem:
+            </span>{" "}
+            Content workflow was manual, slow, and required constant follow-ups.
           </p>
 
-          <p className="mt-4 text-sm text-gray-500 relative z-10">
-            {project.result}
+          <p>
+            <span className="font-semibold text-black dark:text-white">
+              Solution:
+            </span>{" "}
+            Built an automated system connecting ClickUp, Slack, and publishing tools using automation workflows.
           </p>
 
-        </motion.div>
+          <p>
+            <span className="font-semibold text-black dark:text-white">
+              Result:
+            </span>{" "}
+            Reduced manual work by 80% and significantly sped up content production.
+          </p>
 
-      ))}
+        </div>
+      </motion.div>
+
+      {/* CASE 2 */}
+      <motion.div
+        className="p-8 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="text-xl font-semibold">
+          Lead Funnel System
+        </h3>
+
+        <div className="mt-6 space-y-4 text-gray-600 dark:text-gray-300">
+
+          <p>
+            <span className="font-semibold text-black dark:text-white">
+              Problem:
+            </span>{" "}
+            Leads were not being followed up consistently, resulting in missed opportunities.
+          </p>
+
+          <p>
+            <span className="font-semibold text-black dark:text-white">
+              Solution:
+            </span>{" "}
+            Built an automated funnel with CRM follow-ups and lead tracking system.
+          </p>
+
+          <p>
+            <span className="font-semibold text-black dark:text-white">
+              Result:
+            </span>{" "}
+            Increased conversion rate and eliminated manual follow-ups.
+          </p>
+
+        </div>
+      </motion.div>
 
     </div>
 
