@@ -111,99 +111,94 @@ export default function Home() {
         </div>
       </motion.nav>
 
-      {/* HERO */}
-      <section
+   {/* HERO */}
+<section
   id="hero"
   className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 overflow-hidden"
 >
-  {/* BACKGROUND GRADIENT */}
   {/* BASE BACKGROUND */}
-<div className="absolute inset-0 -z-10 bg-black" />
+  <div className="absolute inset-0 -z-20 bg-black" />
 
-{/* GRID LINES */}
-<div
-  className="absolute inset-0 -z-10 opacity-20"
-  style={{
-    backgroundImage: `
-  linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)
-`,
-    backgroundSize: "40px 40px",
-  }}
-/>
-
-{/* ANIMATED GLOW */}
-<motion.div
-  className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/20 blur-[120px] rounded-full"
-  animate={{ x: [0, 40, -40, 0] }}
-  transition={{ duration: 12, repeat: Infinity }}
-/>
-
-<motion.div
-  className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/20 blur-[120px] rounded-full"
-  animate={{ y: [0, -30, 30, 0] }}
-  transition={{ duration: 14, repeat: Infinity }}
-/>
-
-  {/* GLOW EFFECT */}
+  {/* ANIMATED GRID */}
   <motion.div
-  className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/20 blur-[120px] rounded-full"
-  animate={{ x: [0, 40, -40, 0] }}
-  transition={{ duration: 12, repeat: Infinity }}
-/>
+    className="absolute inset-0 -z-10 opacity-20"
+    style={{
+      backgroundImage:
+        "linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)",
+      backgroundSize: "40px 40px",
+    }}
+    animate={{
+      backgroundPosition: ["0px 0px", "40px 40px"],
+    }}
+    transition={{
+      duration: 20,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
 
-  <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/20 blur-[120px] rounded-full" />
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-6xl font-bold max-w-4xl tracking-tight"
-        >
-          I Build Automated Systems That{" "}
-<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-  Replace Manual Work
-</span>{" "}
-&{" "}
-<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-  Increase Conversions
-</span>
-        </motion.h1>
+  {/* TOP GLOW */}
+  <motion.div
+    className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/20 blur-[120px] rounded-full"
+    animate={{ x: [0, 40, -40, 0] }}
+    transition={{ duration: 12, repeat: Infinity }}
+  />
 
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-xl"
-        >
-          I use vibe coding, n8n and automation tools to build systems that save hours of work and help businesses scale faster.
-        </motion.p>
+  {/* BOTTOM GLOW */}
+  <motion.div
+    className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/20 blur-[120px] rounded-full"
+    animate={{ y: [0, -30, 30, 0] }}
+    transition={{ duration: 14, repeat: Infinity }}
+  />
 
-        {/* CTA BUTTONS (RESTORED) */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-8 flex gap-4"
-        >
-          <motion.a
-  href="#contact"
-  whileHover={{ scale: 1.08 }}
-  whileTap={{ scale: 0.96 }}
-  className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-xl transition relative overflow-hidden"
->
-  <span className="relative z-10">Book a Call</span>
+  {/* CONTENT */}
+  <motion.h1
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="text-5xl md:text-6xl font-bold max-w-4xl tracking-tight"
+  >
+    I Build Automated Systems That{" "}
+    <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+      Replace Manual Work
+    </span>{" "}
+    &{" "}
+    <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+      Increase Conversions
+    </span>
+  </motion.h1>
 
-  {/* glow layer */}
-  <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition" />
-</motion.a>
+  <motion.p
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.2 }}
+    className="mt-6 text-lg text-gray-400 max-w-xl"
+  >
+    I use vibe coding, n8n and automation tools to build systems that save hours of work and help businesses scale faster.
+  </motion.p>
 
-          <a
-            href="#projects"
-            className="px-6 py-3 border rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            See Work
-          </a>
-        </motion.div>
-      </section>
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4 }}
+    className="mt-8 flex gap-4"
+  >
+    <motion.a
+      href="#contact"
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.96 }}
+      className="px-6 py-3 bg-white text-black rounded-xl transition"
+    >
+      Book a Call
+    </motion.a>
+
+    <a
+      href="#projects"
+      className="px-6 py-3 border border-white/30 rounded-xl hover:bg-white/10 transition"
+    >
+      See Work
+    </a>
+  </motion.div>
+</section>
 
   {/* TRUST / PROOF */}
 <section className="px-6 py-16 text-center">
@@ -484,5 +479,6 @@ export default function Home() {
     </main>
   );
 }
+
 
 
