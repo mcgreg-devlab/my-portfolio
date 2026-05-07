@@ -100,13 +100,6 @@ export default function Home() {
 >
   Contact
 </a>
-
-            <button
-              onClick={() => setDark(!dark)}
-              className="border px-3 py-1 rounded-lg"
-            >
-              {dark ? "Light" : "Dark"}
-            </button>
           </div>
         </div>
       </motion.nav>
@@ -114,7 +107,7 @@ export default function Home() {
    {/* HERO */}
 <section
   id="hero"
-  className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 overflow-hidden"
+  className="relative min-h-screen flex items-center px-6 overflow-hidden"
 >
   {/* BASE BACKGROUND */}
   <div className="absolute inset-0 -z-20 bg-black" />
@@ -151,57 +144,91 @@ export default function Home() {
     transition={{ duration: 14, repeat: Infinity }}
   />
 
+  {/* HERO VIDEO */}
+<div className="absolute inset-0 overflow-hidden">
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover object-right opacity-60"
+  >
+    <source src="/hero-video.mp4" type="video/mp4" />
+  </video>
+
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-black/20" />
+
+</div>
+
   {/* CONTENT */}
-  <motion.h1
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="text-5xl md:text-6xl font-bold max-w-4xl tracking-tight"
-  >
-    I Build Automated Systems That{" "}
-    <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-      Replace Manual Work
-    </span>{" "}
-    &{" "}
-    <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-      Increase Conversions
-    </span>
-  </motion.h1>
+  <div className="relative z-20 max-w-7xl mx-auto w-full grid md:grid-cols-2 items-center gap-16 px-10">
 
-  <motion.p
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.2 }}
-    className="mt-6 text-lg text-gray-400 max-w-xl"
-  >
-    I use vibe coding, n8n and automation tools to build systems that save hours of work and help businesses scale faster.
-  </motion.p>
+    {/* LEFT SIDE */}
+    <div className="text-left max-w-2xl pt-24">
 
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.4 }}
-    className="mt-8 flex gap-4"
-  >
-    <motion.a
-      href="#contact"
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.96 }}
-      className="px-6 py-3 bg-white text-black rounded-xl transition"
-    >
-      Book a Call
-    </motion.a>
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-5xl md:text-7xl font-bold tracking-[-0.04em] leading-[0.9]"
+      >
+        I Build Automated
+<br />
+Systems That{" "}
+<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+  Replace Manual Work
+</span>
+<br />
+&{" "}
+<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+  Increase Conversions
+</span>
+      </motion.h1>
 
-    <a
-      href="#projects"
-      className="px-6 py-3 border border-white/30 rounded-xl hover:bg-white/10 transition"
-    >
-      See Work
-    </a>
-  </motion.div>
+      <motion.p
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="mt-8 text-lg text-gray-300/90 max-w-lg leading-relaxed"
+      >
+        I use vibe coding, n8n and automation tools to build systems that save hours of work and help businesses scale faster.
+      </motion.p>
+
+      {/* CTA BUTTONS */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="mt-10 flex gap-4"
+      >
+        <motion.a
+          href="#contact"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.96 }}
+          className="px-6 py-3 bg-white text-black rounded-xl font-medium transition"
+        >
+          Book a Call
+        </motion.a>
+
+        <a
+          href="#projects"
+          className="px-6 py-3 border border-white/20 rounded-xl hover:bg-white/10 transition"
+        >
+          See Work
+        </a>
+      </motion.div>
+
+    </div>
+
+    {/* RIGHT SIDE */}
+    <div />
+
+  </div>
 </section>
 
   {/* TRUST / PROOF */}
-<section className="px-6 py-16 text-center">
+<section className="px-6 py-16 text-center bg-[#111111]">
   <div className="max-w-5xl mx-auto">
 
     <p className="text-sm uppercase tracking-widest text-gray-400">
@@ -295,7 +322,7 @@ export default function Home() {
       {/* SERVICES (RESTORED) */}
       <motion.section
         id="services"
-        className="px-6 py-20 text-center"
+        className="px-6 py-20 text-center bg-[#161616]"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -329,7 +356,10 @@ export default function Home() {
       </motion.section>
 
     {/* CASE STUDIES */}
-<section id="projects" className="px-6 py-20">
+<section
+  id="projects"
+  className="px-6 py-20 bg-[#1a1a1a]"
+>
   <div className="max-w-5xl mx-auto">
 
     <div className="text-center">
@@ -424,7 +454,7 @@ export default function Home() {
 
 
 {/* WHY ME */}
-<section className="px-6 py-20 text-center">
+<section className="px-6 py-20 text-center bg-[#141414]">
   <div className="max-w-4xl mx-auto">
 
     <h2 className="text-3xl font-semibold">
@@ -459,7 +489,10 @@ export default function Home() {
 </section>
 
       {/* CONTACT */}
-      <section id="contact" className="px-6 py-20 text-center">
+      <section
+  id="contact"
+  className="px-6 py-20 text-center bg-[#101010]"
+>
         <h2 className="text-3xl font-semibold">
           Let’s Build a System That Saves You Time and Drives Results
         </h2>
