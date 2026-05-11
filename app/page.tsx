@@ -227,9 +227,19 @@ Systems That{" "}
   </div>
 </section>
 
+
   {/* TRUST / PROOF */}
-<section className="px-6 py-16 text-center bg-[#111111]">
+<section className="relative -mt-24 px-6 pt-32 pb-20 text-center overflow-hidden bg-[#050816]">
   <div className="max-w-5xl mx-auto">
+
+  {/* BACKGROUND ATMOSPHERE */}
+<div className="absolute inset-0 -z-10">
+
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-500/10 blur-[140px]" />
+
+  <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[140px]" />
+
+</div>  
 
     <p className="text-sm uppercase tracking-widest text-gray-400">
       Proof & Experience
@@ -295,14 +305,14 @@ Systems That{" "}
     </div>
 
     {/* PERSONAL PROJECTS */}
-<div className="mt-12 text-sm text-gray-500">
+<div className="mt-14 mx-auto w-fit rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-10 py-6 text-sm text-gray-300">
   <p>Personal Builds:</p>
 
-  <div className="mt-4 flex justify-center gap-6">
+  <div className="mt-6 flex justify-center gap-4 flex-wrap">
     <a
       href="https://mcgreg-linkhub.vercel.app/"
       target="_blank"
-      className="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+      className="px-5 py-3 rounded-xl border border-white/15 bg-white/10 hover:bg-white/20 transition text-white"
     >
       View Link Hub
     </a>
@@ -319,41 +329,85 @@ Systems That{" "}
   </div>   {/* CLOSE max-w container */}
 </section>  {/* CLOSE TRUST SECTION */}
 
-      {/* SERVICES (RESTORED) */}
-      <motion.section
-        id="services"
-        className="px-6 py-20 text-center bg-[#161616]"
+  {/* SERVICES (RESTORED) */}
+<motion.section
+  id="services"
+  className="px-6 pt-24 pb-32 text-center bg-[#070b17] text-white"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+
+  <div className="max-w-6xl mx-auto">
+
+    <h2 className="text-3xl font-semibold">
+      What I Build
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-6 mt-12">
+
+      {/* CARD 1 */}
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        whileHover={{
+          y: -10,
+          scale: 1.02,
+        }}
+        className="group p-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] transition duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
       >
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold">What I Build</h2>
+        <h3 className="font-semibold">Automation Systems</h3>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="p-6 border rounded-xl">
-              <h3 className="font-semibold">Automation Systems</h3>
-              <p className="mt-3 text-gray-500">
-                Replace manual work with smart workflows.
-              </p>
-            </div>
+        <p className="mt-3 text-gray-300">
+          Replace manual work with smart workflows.
+        </p>
+      </motion.div>
 
-            <div className="p-6 border rounded-xl">
-              <h3 className="font-semibold">Custom Tools</h3>
-              <p className="mt-3 text-gray-500">
-                Build internal tools fast using vibe coding.
-              </p>
-            </div>
+      {/* CARD 2 */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        whileHover={{
+          y: -10,
+          scale: 1.02,
+        }}
+        className="group p-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] transition duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+      >
+        <h3 className="font-semibold">Custom Tools</h3>
 
-            <div className="p-6 border rounded-xl">
-              <h3 className="font-semibold">Funnels</h3>
-              <p className="mt-3 text-gray-500">
-                Capture and convert leads automatically.
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+        <p className="mt-3 text-gray-300">
+          Build internal tools fast using vibe coding.
+        </p>
+      </motion.div>
+
+      {/* CARD 3 */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        whileHover={{
+          y: -10,
+          scale: 1.02,
+        }}
+        className="group p-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] transition duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+      >
+        <h3 className="font-semibold">Funnels</h3>
+
+        <p className="mt-3 text-gray-300">
+          Capture and convert leads automatically.
+        </p>
+      </motion.div>
+
+    </div>
+
+  </div>
+
+</motion.section>
 
     {/* CASE STUDIES */}
 <section
