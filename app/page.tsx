@@ -412,98 +412,252 @@ Systems That{" "}
     {/* CASE STUDIES */}
 <section
   id="projects"
-  className="px-6 py-20 bg-[#1a1a1a]"
+  className="px-6 py-32 bg-gradient-to-b from-[#070b17] to-[#0b1120] text-white"
 >
-  <div className="max-w-5xl mx-auto">
 
-    <div className="text-center">
-      <p className="text-sm uppercase tracking-widest text-gray-400">
+  <div className="max-w-7xl mx-auto">
+
+    {/* SECTION TITLE */}
+    <div className="text-center max-w-3xl mx-auto">
+
+      <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
         Case Studies
       </p>
-      <h2 className="text-3xl font-semibold mt-2">
-        Real Systems, Real Results
+
+      <h2 className="text-4xl md:text-6xl font-bold mt-4 leading-tight">
+        Real projects. Real systems.
       </h2>
-    </div>
 
-    <div className="mt-16 space-y-12">
-
-      {/* CASE 1 */}
-      <motion.div
-        className="p-8 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-xl font-semibold">
-          Content Automation System
-        </h3>
-
-        <div className="mt-6 space-y-4 text-gray-600 dark:text-gray-300">
-
-          <p>
-            <span className="font-semibold text-black dark:text-white">
-              Problem:
-            </span>{" "}
-            Content workflow was manual, slow, and required constant follow-ups.
-          </p>
-
-          <p>
-            <span className="font-semibold text-black dark:text-white">
-              Solution:
-            </span>{" "}
-            Built an automated system connecting ClickUp, Slack, and publishing tools using automation workflows.
-          </p>
-
-          <p>
-            <span className="font-semibold text-black dark:text-white">
-              Result:
-            </span>{" "}
-            Reduced manual work by 80% and significantly sped up content production.
-          </p>
-
-        </div>
-      </motion.div>
-
-      {/* CASE 2 */}
-      <motion.div
-        className="p-8 rounded-2xl border bg-white/60 backdrop-blur-lg dark:bg-white/5"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-xl font-semibold">
-          Lead Funnel System
-        </h3>
-
-        <div className="mt-6 space-y-4 text-gray-600 dark:text-gray-300">
-
-          <p>
-            <span className="font-semibold text-black dark:text-white">
-              Problem:
-            </span>{" "}
-            Leads were not being followed up consistently, resulting in missed opportunities.
-          </p>
-
-          <p>
-            <span className="font-semibold text-black dark:text-white">
-              Solution:
-            </span>{" "}
-            Built an automated funnel with CRM follow-ups and lead tracking system.
-          </p>
-
-          <p>
-            <span className="font-semibold text-black dark:text-white">
-              Result:
-            </span>{" "}
-            Increased conversion rate and eliminated manual follow-ups.
-          </p>
-
-        </div>
-      </motion.div>
+      <p className="text-gray-400 mt-6 text-lg">
+        A collection of websites, dashboards, and automation systems
+        built using vibe coding and modern web technologies.
+      </p>
 
     </div>
+
+    {/* PROJECT 1 */}
+    <div className="grid lg:grid-cols-2 gap-16 items-center mt-28">
+
+      {/* LEFT CONTENT */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+
+        <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
+          01 / Client Website
+        </p>
+
+        <h3 className="text-4xl font-bold mt-5 leading-tight">
+          Tattoo Business Website
+        </h3>
+
+        <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+          Built and launched a modern website for a local tattoo business
+          focused on online visibility, mobile responsiveness, and
+          converting visitors into inquiries.
+        </p>
+
+        <div className="flex gap-10 mt-10">
+
+          <div>
+            <h4 className="text-3xl font-bold">3 Days</h4>
+
+            <p className="text-gray-500 text-sm mt-2">
+              Delivery time
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-3xl font-bold">Responsive</h4>
+
+            <p className="text-gray-500 text-sm mt-2">
+              Mobile optimized
+            </p>
+          </div>
+
+        </div>
+
+        <a
+          href="https://northinkcdo.com"
+          target="_blank"
+          className="inline-block mt-10 px-7 py-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition"
+        >
+          Visit Website
+        </a>
+
+      </motion.div>
+
+      {/* RIGHT VIDEO */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        whileHover={{
+          y: -6,
+          scale: 1.01,
+        }}
+        className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl shadow-[0_0_60px_rgba(59,130,246,0.12)]"
+      >
+
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/tattoo-demo.mp4" type="video/mp4" />
+        </video>
+
+      </motion.div>
+
+    </div>
+
+    {/* PROJECT 2 */}
+    <div className="grid lg:grid-cols-2 gap-16 items-center mt-40">
+
+      {/* LEFT VIDEO */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        whileHover={{
+          y: -6,
+          scale: 1.01,
+        }}
+        className="order-2 lg:order-1 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl shadow-[0_0_60px_rgba(59,130,246,0.12)]"
+      >
+
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/flowtrack-demo.mp4" type="video/mp4" />
+        </video>
+
+      </motion.div>
+
+      {/* RIGHT CONTENT */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="order-1 lg:order-2"
+      >
+
+        <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
+          02 / Dashboard Tool
+        </p>
+
+        <h3 className="text-4xl font-bold mt-5 leading-tight">
+          FlowTrack Dashboard
+        </h3>
+
+        <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+          A finance tracking dashboard concept designed for monitoring
+          transactions, expenses, metrics, and performance insights in
+          a clean SaaS-inspired interface.
+        </p>
+
+        <div className="flex gap-10 mt-10">
+
+          <div>
+            <h4 className="text-3xl font-bold">Realtime</h4>
+
+            <p className="text-gray-500 text-sm mt-2">
+              Tracking system
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-3xl font-bold">Modern UI</h4>
+
+            <p className="text-gray-500 text-sm mt-2">
+              SaaS design
+            </p>
+          </div>
+
+        </div>
+
+        <a
+          href="https://finance-tracker-ver-1.vercel.app/"
+          target="_blank"
+          className="inline-block mt-10 px-7 py-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition"
+        >
+          Open Dashboard
+        </a>
+
+      </motion.div>
+
+    </div>
+
+    {/* LINKHUB MINI SHOWCASE */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      whileHover={{
+        y: -6,
+      }}
+      className="mt-32 max-w-4xl mx-auto overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+    >
+
+      <div className="grid md:grid-cols-2 items-center">
+
+        {/* VIDEO */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/linkhub-demo.mp4" type="video/mp4" />
+        </video>
+
+        {/* CONTENT */}
+        <div className="p-10">
+
+          <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
+            Featured Tool
+          </p>
+
+          <h3 className="text-3xl font-bold mt-5">
+            LinkHub
+          </h3>
+
+          <p className="text-gray-400 mt-5 leading-relaxed">
+            A lightweight link management tool designed for organizing,
+            sharing, and managing important resources in one clean
+            interface.
+          </p>
+
+          <a
+            href="https://mcgreg-linkhub.vercel.app/"
+            target="_blank"
+            className="inline-block mt-8 px-7 py-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition"
+          >
+            Open Tool
+          </a>
+
+        </div>
+
+      </div>
+
+    </motion.div>
 
   </div>
+
 </section>
 
 
