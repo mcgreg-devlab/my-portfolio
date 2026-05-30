@@ -517,7 +517,84 @@ Systems That{" "}
 
     </div>
 
-    {/* PROJECT 2 */}
+{/* PROJECT 2 */}
+<div className="grid lg:grid-cols-2 gap-16 items-center mt-40">
+
+  {/* LEFT VIDEO */}
+  <motion.div
+    initial={{ opacity: 0, x: -40 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.7 }}
+    whileHover={{
+      y: -6,
+      scale: 1.01,
+    }}
+    className="order-2 lg:order-1 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl shadow-[0_0_60px_rgba(59,130,246,0.12)]"
+  >
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="w-full h-full object-cover"
+    >
+      <source src="/fleet-tracking.mp4" type="video/mp4" />
+    </video>
+  </motion.div>
+
+  {/* RIGHT CONTENT */}
+  <motion.div
+    initial={{ opacity: 0, x: 40 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.7 }}
+    className="order-1 lg:order-2"
+  >
+
+    <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
+      02 / Fleet Management
+    </p>
+
+    <h3 className="text-4xl font-bold mt-5 leading-tight">
+      Fleet Tracking System
+    </h3>
+
+    <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+      A fleet management platform concept designed to monitor vehicle
+      locations, routes, trip history, and operational performance
+      through a centralized dashboard.
+    </p>
+
+    <div className="flex gap-10 mt-10">
+
+      <div>
+        <h4 className="text-3xl font-bold">GPS</h4>
+
+        <p className="text-gray-500 text-sm mt-2">
+          Vehicle tracking
+        </p>
+      </div>
+
+      <div>
+        <h4 className="text-3xl font-bold">Realtime</h4>
+
+        <p className="text-gray-500 text-sm mt-2">
+          Fleet monitoring
+        </p>
+      </div>
+
+    </div>
+
+    <button className="mt-10 px-7 py-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition">
+      View Project - On-Going Build
+    </button>
+
+  </motion.div>
+
+</div>
+
+    {/* PROJECT 3 */}
     <div className="grid lg:grid-cols-2 gap-16 items-center mt-40">
 
       {/* LEFT VIDEO */}
@@ -555,7 +632,7 @@ Systems That{" "}
       >
 
         <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
-          02 / Dashboard Tool
+          03 / Dashboard Tool
         </p>
 
         <h3 className="text-4xl font-bold mt-5 leading-tight">
