@@ -173,17 +173,15 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         className="text-5xl md:text-7xl font-bold tracking-[-0.04em] leading-[0.9]"
       >
-        I Build Automated
+      I Build Websites,
 <br />
-Systems That{" "}
+Dashboards &
+{" "}
 <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-  Replace Manual Work
+  Automation Systems
 </span>
 <br />
-&{" "}
-<span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-  Increase Conversions
-</span>
+That Solve Real Problems
       </motion.h1>
 
       <motion.p
@@ -192,7 +190,7 @@ Systems That{" "}
         transition={{ delay: 0.2 }}
         className="mt-8 text-lg text-gray-300/90 max-w-lg leading-relaxed"
       >
-        I use vibe coding, n8n and automation tools to build systems that save hours of work and help businesses scale faster.
+        I help businesses automate repetitive work, streamline operations, and launch modern digital solutions using AI, automation, and custom-built systems.
       </motion.p>
 
       {/* CTA BUTTONS */}
@@ -208,14 +206,14 @@ Systems That{" "}
           whileTap={{ scale: 0.96 }}
           className="px-6 py-3 bg-white text-black rounded-xl font-medium transition"
         >
-          Book a Call
+          Let's Talk
         </motion.a>
 
         <a
           href="#projects"
           className="px-6 py-3 border border-white/20 rounded-xl hover:bg-white/10 transition"
         >
-          See Work
+          View Projects
         </a>
       </motion.div>
 
@@ -409,6 +407,62 @@ Systems That{" "}
 
 </motion.section>
 
+{/* TECH STACK */}
+<section className="px-6 py-24 bg-[#0b1120] text-white">
+
+  <div className="max-w-6xl mx-auto">
+
+    {/* HEADER */}
+    <div className="text-center">
+
+      <p className="uppercase tracking-[0.3em] text-blue-400 text-sm">
+        Tools I Work With
+      </p>
+
+      <h2 className="text-4xl font-bold mt-4">
+        My Tech Stack
+      </h2>
+
+      <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+        These are the tools and technologies I use to build websites,
+        dashboards, automation systems, and AI-powered workflows.
+      </p>
+
+    </div>
+
+    {/* STACK */}
+    <div className="flex flex-wrap justify-center gap-4 mt-16">
+
+      {[
+        "n8n",
+        "GoHighLevel",
+        "Next.js",
+        "React",
+        "Supabase",
+        "OpenAI",
+        "Claude",
+        "Vercel",
+        "GitHub",
+        "Tailwind CSS",
+      ].map((tool) => (
+        <motion.div
+          key={tool}
+          whileHover={{
+            y: -6,
+            scale: 1.05,
+          }}
+          className="px-6 py-3 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-blue-400/30 hover:bg-white/[0.05] hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition duration-300"
+        >
+          {tool}
+        </motion.div>
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
     {/* CASE STUDIES */}
 <section
   id="projects"
@@ -447,7 +501,7 @@ Systems That{" "}
       >
 
         <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
-          01 / Client Website
+          01 / Client Project
         </p>
 
         <h3 className="text-4xl font-bold mt-5 leading-tight">
@@ -553,7 +607,7 @@ Systems That{" "}
   >
 
     <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
-      02 / Fleet Management
+      02 / Personal Project
     </p>
 
     <h3 className="text-4xl font-bold mt-5 leading-tight">
@@ -632,7 +686,7 @@ Systems That{" "}
       >
 
         <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
-          03 / Dashboard Tool
+          03 / Personal Project
         </p>
 
         <h3 className="text-4xl font-bold mt-5 leading-tight">
@@ -706,7 +760,7 @@ Systems That{" "}
         <div className="p-10">
 
           <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
-            Featured Tool
+            Featured Personal Project
           </p>
 
           <h3 className="text-3xl font-bold mt-5">
@@ -739,60 +793,189 @@ Systems That{" "}
 
 
 {/* WHY ME */}
-<section className="px-6 py-20 text-center bg-[#141414]">
-  <div className="max-w-4xl mx-auto">
+<section className="px-6 py-24 bg-[#101010] text-white">
 
-    <h2 className="text-3xl font-semibold">
-      Why Work With Me
-    </h2>
+  <div className="max-w-6xl mx-auto">
 
-    <div className="grid md:grid-cols-3 gap-8 mt-12">
+    {/* HEADER */}
+    <div className="text-center">
 
-      <div>
-        <h3 className="font-semibold">Fast Execution</h3>
-        <p className="mt-2 text-gray-500">
-          I build working systems in days, not weeks.
-        </p>
-      </div>
+      <p className="uppercase tracking-[0.3em] text-blue-400 text-sm">
+        Why Hire Me
+      </p>
 
-      <div>
-        <h3 className="font-semibold">Automation First</h3>
-        <p className="mt-2 text-gray-500">
-          Everything is designed to reduce manual work and scale operations.
-        </p>
-      </div>
+      <h2 className="text-4xl md:text-5xl font-bold mt-4">
+        I Build. Learn. Automate.
+      </h2>
 
-      <div>
-        <h3 className="font-semibold">Results Focused</h3>
-        <p className="mt-2 text-gray-500">
-          I focus on outcomes—time saved, conversions improved, systems that work.
-        </p>
-      </div>
+      <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
+        I may not have years of agency experience, but I consistently build
+        working websites, dashboards, and automation systems while learning
+        new tools quickly and solving real business problems.
+      </p>
 
     </div>
-  </div>
-</section>
 
-      {/* CONTACT */}
-      <section
-  id="contact"
-  className="px-6 py-20 text-center bg-[#101010]"
->
-        <h2 className="text-3xl font-semibold">
-          Let’s Build a System That Saves You Time and Drives Results
-        </h2>
+    {/* CARDS */}
+    <div className="grid md:grid-cols-3 gap-8 mt-16">
 
-        <p className="mt-4 text-gray-600 dark:text-gray-300">
-          Tell me what you need—I’ll turn it into a working system.
+      {/* CARD 1 */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        whileHover={{
+          y: -10,
+          scale: 1.02,
+        }}
+        className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] transition duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+      >
+
+        <div className="text-4xl mb-4">
+          🚀
+        </div>
+
+        <h3 className="font-semibold text-xl">
+          Build Fast
+        </h3>
+
+        <p className="mt-4 text-gray-400 leading-relaxed">
+          Using AI and vibe coding, I turn ideas into working websites,
+          dashboards, and systems in days instead of weeks.
         </p>
 
-        <a
-          href="mailto:your@email.com"
-          className="inline-block mt-8 px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-xl hover:scale-105 transition"
-        >
-          Book a Free Strategy Call
-        </a>
-      </section>
+      </motion.div>
+
+      {/* CARD 2 */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        whileHover={{
+          y: -10,
+          scale: 1.02,
+        }}
+        className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] transition duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+      >
+
+        <div className="text-4xl mb-4">
+          🧠
+        </div>
+
+        <h3 className="font-semibold text-xl">
+          Fast Learner
+        </h3>
+
+        <p className="mt-4 text-gray-400 leading-relaxed">
+          I quickly adapt to new tools, APIs, platforms, and workflows
+          whenever a project requires something new.
+        </p>
+
+      </motion.div>
+
+      {/* CARD 3 */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        whileHover={{
+          y: -10,
+          scale: 1.02,
+        }}
+        className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] transition duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+      >
+
+        <div className="text-4xl mb-4">
+          ⚙️
+        </div>
+
+        <h3 className="font-semibold text-xl">
+          Automation Mindset
+        </h3>
+
+        <p className="mt-4 text-gray-400 leading-relaxed">
+          I look for opportunities to eliminate repetitive work and build
+          systems that improve efficiency and save valuable time.
+        </p>
+
+      </motion.div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    {/* CONTACT */}
+<section
+  id="contact"
+  className="relative px-6 py-32 text-center bg-[#070707] overflow-hidden"
+>
+
+  {/* BACKGROUND GLOW */}
+  <div className="absolute inset-0 -z-10">
+
+    <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/10 blur-[180px]" />
+
+    <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-500/10 blur-[180px]" />
+
+  </div>
+
+  <div className="max-w-4xl mx-auto">
+
+    <p className="uppercase tracking-[0.3em] text-blue-400 text-sm">
+      Let's Connect
+    </p>
+
+    <h2 className="text-5xl md:text-6xl font-bold mt-6 leading-tight text-white">
+      Looking For Someone Who Can Build And Automate?
+    </h2>
+
+    <p className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+      I help businesses create websites, dashboards, automation systems,
+      and custom tools using modern technologies, AI, and automation workflows.
+    </p>
+
+    {/* BUTTONS */}
+    <div className="flex flex-wrap justify-center gap-4 mt-12">
+
+      <a
+        href="mailto:your@email.com"
+        className="px-8 py-4 rounded-xl bg-white text-black font-medium hover:scale-105 transition duration-300"
+      >
+        Let's Talk
+      </a>
+
+      <a
+        href="https://github.com/YOUR_USERNAME"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-8 py-4 rounded-xl border border-white/10 bg-white/[0.03] text-white hover:bg-white/[0.06] transition duration-300"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/mcgreg-workflow-automation"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-8 py-4 rounded-xl border border-white/10 bg-white/[0.03] text-white hover:bg-white/[0.06] transition duration-300"
+      >
+        LinkedIn
+      </a>
+
+    </div>
+
+    <p className="mt-10 text-gray-500 text-sm">
+      Open to freelance projects, collaborations, and full-time opportunities.
+    </p>
+
+  </div>
+
+</section>
 
     </main>
   );
