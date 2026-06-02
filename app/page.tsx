@@ -791,6 +791,133 @@ That Solve Real Problems
 
 </section>
 
+{/* OTHER PROJECTS */}
+<section className="px-6 py-24 bg-[#0b1120] text-white">
+
+  <div className="max-w-6xl mx-auto">
+
+    {/* HEADER */}
+    <div className="text-center">
+
+      <p className="text-sm uppercase tracking-[0.3em] text-blue-400">
+        Additional Projects
+      </p>
+
+      <h2 className="text-4xl font-bold mt-4">
+        More Things I've Built
+      </h2>
+
+      <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+        Smaller projects focused on automation, data visualization,
+        and workflow efficiency.
+      </p>
+
+    </div>
+
+    {/* PROJECT CARDS */}
+    <div className="grid md:grid-cols-2 gap-8 mt-16">
+
+      {/* CRYPTO DASHBOARD */}
+<motion.a
+  href="https://crypto-dashboard-eta-one.vercel.app/"
+  target="_blank"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  whileHover={{
+    y: -10,
+    scale: 1.02,
+  }}
+  className="block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition duration-300"
+>
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-56 object-cover"
+  >
+    <source src="/crypto-dashboard.mp4" type="video/mp4" />
+  </video>
+
+  <div className="p-8">
+
+    <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
+      Personal Project
+    </p>
+
+    <h3 className="text-2xl font-bold mt-4">
+      Crypto Dashboard
+    </h3>
+
+    <p className="text-gray-400 mt-4 leading-relaxed">
+      Cryptocurrency dashboard designed to visualize market data,
+      pricing information, and trends through a clean interface.
+    </p>
+
+    <div className="mt-6 text-white font-medium">
+      View Project →
+    </div>
+
+  </div>
+
+</motion.a>
+
+      {/* CSV EMAIL GENERATOR */}
+<motion.a
+  href="https://csv-email-generator.vercel.app/"
+  target="_blank"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  whileHover={{
+    y: -10,
+    scale: 1.02,
+  }}
+  className="block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.05] hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition duration-300"
+>
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-56 object-cover"
+  >
+    <source src="/csv-email-generator.mp4" type="video/mp4" />
+  </video>
+
+  <div className="p-8">
+
+    <p className="text-sm uppercase tracking-[0.25em] text-blue-400">
+      Personal Project
+    </p>
+
+    <h3 className="text-2xl font-bold mt-4">
+      CSV Email Generator
+    </h3>
+
+    <p className="text-gray-400 mt-4 leading-relaxed">
+      Tool that converts CSV data into personalized email content,
+      helping streamline outreach and communication workflows.
+    </p>
+
+    <div className="mt-6 text-white font-medium">
+      View Project →
+    </div>
+
+  </div>
+
+</motion.a>
+
+    </div>
+
+  </div>
+
+</section>
 
 {/* WHY ME */}
 <section className="px-6 py-24 bg-[#101010] text-white">
